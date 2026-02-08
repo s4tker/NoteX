@@ -1,0 +1,271 @@
+:root {
+    --bg-main: #ffffff;
+    --bg-side: #fbfbfa;
+    --text-color: #37352f;
+    --text-muted: #73726e;
+    --border: #e9e9e8;
+    --accent: #2383e2;
+    --hover: #efefed;
+    --danger: #eb5757;
+}
+
+[data-theme="dark"] {
+    --bg-main: #191919;
+    --bg-side: #202020;
+    --text-color: #d3d3d3;
+    --text-muted: #9b9b9b;
+    --border: #2f2f2f;
+    --accent: #2eaadc;
+    --hover: #2c2c2c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+body {
+    font-family: -apple-system, system-ui, sans-serif;
+    display: flex;
+    height: 100vh;
+    background: var(--bg-main);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+#Sidebar {
+    width: 280px;
+    background: var(--bg-side);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.SidebarHeader {
+    padding: 25px 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Brand {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.Actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.Actions button:hover {
+    background: var(--hover);
+}
+
+.SearchContainer {
+    padding: 0 15px 15px;
+}
+
+#InputSearch {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-main);
+    color: inherit;
+    outline: none;
+}
+
+#FileTree {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.TreeItem {
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.TreeItem:hover {
+    background: var(--hover);
+}
+
+.TreeItem.Active {
+    background: var(--hover);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.FolderItem {
+    font-weight: 700;
+    margin-top: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.FolderItem.SelectedFolder {
+    color: var(--accent);
+}
+
+.FolderChevron {
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+    width: 10px;
+    display: inline-block;
+}
+
+.FolderChevron.Closed {
+    transform: rotate(-90deg);
+}
+
+.NoteIndent {
+    margin-left: 20px;
+    border-left: 1px solid var(--border);
+}
+
+#MainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.EditorHeader {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.HeaderActions {
+    display: flex;
+    gap: 10px;
+}
+
+.EditorScroll {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10%;
+}
+
+#NoteTitle {
+    font-size: 2.8rem;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+#MarkdownInput {
+    width: 100%;
+    min-height: 60vh;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    resize: none;
+}
+
+.MarkdownBody {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.ViewTabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border);
+}
+
+.TabBtn {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.TabBtn.Active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    font-weight: 600;
+}
+
+.SidebarFooter {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+}
+
+#BtnThemeToggle {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-main);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.BtnDanger {
+    color: var(--danger);
+    background: none;
+    border: 1px solid var(--danger);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.BtnDanger:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.EmptyState {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+.Hidden {
+    display: none !important;
+}
+
+.CustomScroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.CustomScroll::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
