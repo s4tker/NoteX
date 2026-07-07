@@ -63,7 +63,7 @@ const NoteX = {
             FolderEl.innerHTML = `
                 <span class="FolderChevron ${Folder.collapsed ? 'Closed' : ''}">
                     ${Folder.collapsed ? '▶' : '▼'}
-                </span> 📁 ${Folder.name}
+                </span>  ${Folder.name}
             `;
 
             FolderEl.onclick = () => {
@@ -93,7 +93,7 @@ const NoteX = {
                     .forEach(Note => {
                         const NoteEl = document.createElement('div');
                         NoteEl.className = `TreeItem NoteIndent ${this.State.ActiveNoteId === Note.id ? 'Active' : ''}`;
-                        NoteEl.innerHTML = `📄 ${Note.title || 'Untitled Note'}`;
+                        NoteEl.innerHTML = `󱞁 ${Note.title || 'Untitled Note'}`;
                         NoteEl.draggable = true;
 
                         NoteEl.onclick = e => {
