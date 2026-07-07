@@ -9,7 +9,7 @@ Its goal is to work as a **digital brain**, allowing users to organize notes int
 
 ---
 
-##  Features
+## Features
 
 -  Folder and note system
 -  Editor with **Markdown** support
