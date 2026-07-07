@@ -63,7 +63,7 @@ const NoteX = {
             FolderEl.innerHTML = `
                 <span class="FolderChevron ${Folder.collapsed ? 'Closed' : ''}">
                     ${Folder.collapsed ? '▶' : '▼'}
-                </span>🗁${Folder.name}
+                </span>🗁 ${Folder.name}
             `;
 
             FolderEl.onclick = () => {
